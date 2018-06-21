@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        
+        <title>trillo &mdash; Your all-in-one booking app</title>
+    </head>
+    <body>
+        <!-- TO RUN THIS SITE: NPM RUN START-->
+        <!-- all content will be in here -->
+        <div class="container">
+            <!-- top part of content -->
+            <header class="header">
+                <!-- header has 3 main components: logo, searchbar, user navigation -->
+                <img src="img/logo.png" alt="trillo logo" class="logo">
+
+                <form action="#" class="search">
+                    <input type="text" class="search__input" placeholder="Search hotels">
+                    <button class="search__button">
+                        <!-- best way to include svg in html
+                            what we did...
+                            -went to icomoon.io
+                            -picked the icons we wanted
+                            -went to settings and unclicked png because we only want svg
+                            -then downloaded and from there took the SVG folder and symbol-defs.svg
+                            -copied and pasted those two into our images folder
+                            -then set it up here in the html file
+                        -->
+                        <svg class="search__icon">
+                            <use xlink:href="img/sprite.svg#icon-search"></use>
+                        </svg>
+                    </button>
+                </form>
+
+                <nav class="user-nav">
+                    <!-- div for the bookmark icon -->
+                    <div class="user-nav__icon-box">
+                        <svg class="user-nav__icon">
+                            <use xlink:href="img/sprite.svg#icon-bookmark"></use>
+                        </svg>
+                        <span class="user-nav__notification">7</span>
+                    </div>
+
+                    <!-- div for chat icon -->
+                    <div class="user-nav__icon-box">
+                        <svg class="user-nav__icon">
+                            <use xlink:href="img/sprite.svg#icon-bubbles2"></use>
+                        </svg>
+                        <span class="user-nav__notification">13</span>
+                    </div>
+
+                    <div class="user-nav__user">
+                        <img src="" alt="User photo" class="user-nav__user-photo">
+                        <span class="user-nav__user-name">Kelvin</span>
+                    </div>
+                </nav>
+            </header>
+
+            <!-- entire part below header -->
+            <div class="content">
+
+                <!-- side column bar -->
+                <nav class="sidebar">
+                    <ul class="side-nav">
+                        <li class="side-nav__item">
+                            <a href="#" class="side-nav__link">
+                                <svg class="side-nav__icon">
+                                    <use xlink:href="img/sprite.svg#icon-home3"></use>
+                                </svg>
+                                <span>Hotel</span>
+                            </a>
+                        </li>
+
+                        <li class="side-nav__item">
+                            <a href="#" class="side-nav__link">
+                                <svg class="side-nav__icon">
+                                    <use xlink:href="img/sprite.svg#icon-airplane"></use>
+                                </svg>
+                                <span>Flight</span>
+                            </a>
+                        </li>
+
+                        <li class="side-nav__item">
+                            <a href="#" class="side-nav__link">
+                                <svg class="side-nav__icon">
+                                    <use xlink:href="img/sprite.svg#icon-key"></use>
+                                </svg>
+                                <span>Car Rental</span>
+                            </a>
+                        </li>
+
+                        <li class="side-nav__item">
+                            <a href="#" class="side-nav__link">
+                                <svg class="side-nav__icon">
+                                    <use xlink:href="img/sprite.svg#icon-map2"></use>
+                                </svg>
+                                <span>Tours</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="legal">
+                        &copy; 2017 by trillo. All rights reserved.
+                    </div>
+                </nav>
+
+                <!-- main section of the site -->
+                <main class="hotel-view">
+                    Hotel View
+                </main>
+            </div>
+        </div>
+    </body>
+</html>
