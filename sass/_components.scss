@@ -157,18 +157,41 @@
     margin-top: 3.5rem;
 
     &__item {
+        position: relative;
 
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
     }
 
     // small line that becomes visible and expands to the right side
     &__item::before {
         content: "";
-        position: 0;
+        position: absolute;
         top: 0;
         left: 0;
         height: 100%;
         width: 3px;
         background-color: var(--color-primary);
+
+        // need to put this here so that scaleY(1) below can work
+        // this is for the nav highlight
+        transform: scaleY(0);
+        transition: transform .2s,
+                    width .4s cubic-bezier(1, 0, 0, 1) .2s,
+                    background-color .1s;
+    }
+
+    // this is for the nav highlight
+    &__item:hover::before,
+    &__item--active::before {
+        // scale only occurs in Y direction
+        transform: scaleY(1);
+        width: 100%;
+    }
+
+    &__item:active::before {
+        background-color: var(--color-primary-light);
     }
 
     &__link:link,
@@ -178,6 +201,10 @@
         text-transform: uppercase;
         display: block;
         padding: 1.5rem 3rem;
+
+        // this helps show the links when highlighted over
+        position: relative;
+        z-index: 10;
 
         display: flex;
         align-items: center;
